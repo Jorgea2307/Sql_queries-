@@ -1,1 +1,93 @@
-this is all the sql queries.
+## we construct a simple command using basic part of a query. We select specif column from the cycle_hire table, such as end_station_name column
+
+
+SELECT 
+
+   end_station_name
+
+ FROM `bigquery-public-data.london_bicycles.cycle_hire` ;
+ 
+ 
+ 
+ ##After running the first basic query, try answering a specific question about the data. For example, what were the rental_ids for all bike trips that lasted for 20 minutes or longer?
+
+SELECT 
+
+count(*) AS num_of_trips
+   
+
+FROM bigquery-public-data.london_bicycles.cycle_hire
+
+
+## we add a filter where clause
+
+WHERE  
+
+  duration >= 1200;
+  
+  
+  #some challenge questions, 
+  
+  ## f you’re comfortable using queries to answer questions, try creating and running queries to answer any of the questions below: 
+
+##What are the names of the stations that bike_id 1710 started from?
+
+##How many bike_ids have ended at "Moor Street, Soho"?
+
+##What is the station_id for "Canton Street, Poplar"?
+
+## What is the name of the station whose ID is 111?
+
+##  How many bike_ids had trip durations greater than 2400 seconds (or 40 minutes)?
+ 
+ 
+#question: what are the names of the stations that bike_id 1710 started from? 
+
+SELECT 
+
+ bike_id, start_station_name
+
+FROM bigquery-public-data.london_bicycles.cycle_hire
+
+WHERE  
+    bike_id = 1710;
+    
+## How many bike_ids have ended at "Moor Street, Soho"?
+SELECT 
+
+   bike_id,end_station_name, 
+
+FROM bigquery-public-data.london_bicycles.cycle_hire
+
+WHERE 
+   end_station_name = "Moor Street, Soho";
+ 
+ 
+## What is the station_id for "Canton Street, Poplar"?
+
+ SELECT 
+
+ start_station_id, start_station_name,
+
+  
+
+FROM bigquery-public-data.london_bicycles.cycle_hire
+
+WHERE 
+   start_station_name = 'Canton Street, Poplar';
+   
+  
+##What is the name of the station whose ID is 111?  
+  
+  SELECT 
+
+ start_station_id, start_station_name,
+
+  
+
+FROM bigquery-public-data.london_bicycles.cycle_hire
+
+WHERE 
+  start_station_id = 111;
+
+
