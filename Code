@@ -13,7 +13,7 @@ SELECT
 
 SELECT 
 
-count(*) AS num_of_trips
+count(*) AS num_of_trips -- count is used here to "count number of observations".
    
 
 FROM bigquery-public-data.london_bicycles.cycle_hire
@@ -45,17 +45,19 @@ WHERE
 
 SELECT 
 
- bike_id, start_station_name
+ bike_id, start_station_name --could also use end_station_name
 
 FROM bigquery-public-data.london_bicycles.cycle_hire
 
 WHERE  
     bike_id = 1710;
     
+
+
 ## How many bike_ids have ended at "Moor Street, Soho"?
 SELECT 
 
-   bike_id,end_station_name, 
+   bike_id,end_station_name, --here we use count, since we were asked how manny
 
 FROM bigquery-public-data.london_bicycles.cycle_hire
 
@@ -63,6 +65,8 @@ WHERE
    end_station_name = "Moor Street, Soho";
  
  
+
+
 ## What is the station_id for "Canton Street, Poplar"?
 
  SELECT 
@@ -77,6 +81,9 @@ WHERE
    start_station_name = 'Canton Street, Poplar';
    
   
+
+
+
 ##What is the name of the station whose ID is 111?  
   
   SELECT 
