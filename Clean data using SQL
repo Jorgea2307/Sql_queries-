@@ -1,1 +1,5 @@
 ## data cleaning excercise using Big Query 
+
+
+## Step 1: Inspect the fuel_type column, 
+ the fist thing we want to do is inspect the data in our table so we can find out if there is any specific cleaning that needs to be done. According to the data description, the fuel_type column should only have two unique string values: diesel and gas. To check and make sure that's true, we'll run the following query: 
